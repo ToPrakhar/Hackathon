@@ -1,45 +1,44 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html >
 <html lang="en">
+	
 	<head>
-		
 		<title>Car Pool</title>
 		
+		<link rel="shortcut icon" href="./images/images.ico" type="image/ico" />
 		
-		<link rel="shortcut icon" href="./images/favicon.ico" type="image/ico" />
-		
-		<!-- Including Jquery CSS files -->
 		<link rel="stylesheet" type="text/css" href="libraries/smoothness/jquery-ui.css" />
 		<link rel="stylesheet" href="libraries/jquery.mobile-1.3.2.css" />
-		<!-- Including Jquery CSS files end -->
-
-		<!-- including App CSS files -->
-		<link rel="stylesheet" href="css/dummy.css">
-		<!-- including App CSS files end-->
+		<link rel="stylesheet" href="css/home.css">
 		
-		<!-- Including Jquery JS files -->
 		<script type="text/javascript" src="libraries/jquery-1.10.2.js"></script>
 		<script type="text/javascript" src="libraries/jquery-ui.js"></script>
 		<script type="text/javascript" src="libraries/jquery.mobile-1.3.2.js"></script>
 		<script type="text/javascript" src="libraries/jquery.blockUI.js"></script>
-		<!-- Including Jquery JS files end -->
-
-		<!-- Including App JS files -->
-		<script type="text/javascript" src="js/dummy.js"></script>
-		<!-- Including App JS files end -->
-
+		<script type="text/javascript" src="js/home.js"></script>
 	</head>
-	
-	
-			
-	<body id="pagedummy" onunload="">
 
-		<div data-role="page" id="page1">
+<body>
+
+	<div data-role="page" id="home-page" data-theme="d" style="min-height: 245px;">
 		
+		<!-- header -->
+		<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
+			<h1>Car Pool Status</h1>
+			<a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
+		</div>
+	
+		<!-- content -->
+		<div data-role="content" class="ui-content" role="main">
+
 		</div>
 		
-		<%-- <%@include file="jsp/dummy.jsp"%> --%>
+		<!-- left panel -->	
+		<div data-role="panel" id="left-panel" data-theme="b">
+			
+		</div>
 	
-	</body>
+	</div>
+	
+</body>
 </html>

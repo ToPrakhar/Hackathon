@@ -1,0 +1,17 @@
+/* Swipe works with mouse as well but often causes text selection. */
+#home-page * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+/* Arrow only buttons in the header. */
+#home-page .ui-header .ui-btn {
+    background: none;
+    border: none;
+    top: 9px;
+}
+#home-page .ui-header .ui-btn-inner {
+    border: none;
+}
