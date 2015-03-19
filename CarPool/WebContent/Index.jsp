@@ -35,12 +35,18 @@
 		
 		<!-- left panel -->	
 		<div data-role="panel" id="left-panel" data-theme="b">
+		
+			<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
+				<h1>User Role</h1>
+			</div>
+			
 			<ul data-role="listview">
-  				<li><a href="#">Driver</a></li>
-  				<li><a href="#">Rider</a></li>
-  				<li><a href="#">Help</a></li>
-  				<li><a href="#">Profile</a></li>
+				<li><a href="#">Driver</a></li>
+				<li><a href="#">Rider</a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Profile</a></li>
 			</ul>
+		
 		</div>
 	
 	</div>
