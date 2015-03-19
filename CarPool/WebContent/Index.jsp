@@ -35,7 +35,12 @@
 		
 		<!-- left panel -->	
 		<div data-role="panel" id="left-panel" data-theme="b">
-			
+			<ul data-role="listview">
+  				<li><a href="#">Driver</a></li>
+  				<li><a href="#">Rider</a></li>
+  				<li><a href="#">Help</a></li>
+  				<li><a href="#">Profile</a></li>
+			</ul>
 		</div>
 	
 	</div>
