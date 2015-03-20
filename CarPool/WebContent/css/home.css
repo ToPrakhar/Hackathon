@@ -50,3 +50,17 @@
 }
 .driver-rating{
 }
+
+.form-divider-line{
+  height: 25px;
+  width: 100%;
+  background: yellow;
+  border: 2px solid green;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+.form-border{
+  border: 3px solid green;
+  padding: 20px;
+}
