@@ -28,6 +28,12 @@ $( document ).ready(function() {
 		if($('#existing-email').val()=='rider@infosys.com'&& $('#password').val()=='12345')
 			{
 			setCookie('auth',true,5);
+			window.location = 'Index.jsp';
+			}
+		else
+			{
+			console.log('mero');
+			$( "#errorPopup" ).popup("open");
 			}
 		});
 	

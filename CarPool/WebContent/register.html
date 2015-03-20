@@ -31,7 +31,7 @@
 		<div data-role="content" class="ui-content" role="main">
 			<!-------- New Customer ---------->
 			<h3>New Users</h3>
-			<label for="email">Email Id:</label>
+			<label for="email">Infosys Email Id:</label>
    			 <input type="text" name="name" id="email" value="" placeholder="Enter Infosys Email Id" />
    			<label for="mobileNumber">Mobile Number</label>
     		<input type="text" name="name" id="mobileNumber" value=""  placeholder="Enter your Mobile Number"/>
@@ -39,13 +39,18 @@
     		 <input value="Register" type="submit">
 			
 			<!-------- Returning Customer ---------->
-			<h3>Returning Customer</h3>
-			<label for="email">Email Id:</label>
+			<h3>Returning Customers</h3>
+			<label for="email">Infosys Email Id:</label>
    			<input type="text" name="name" id="existing-email" value="" placeholder="Enter Infosys Email Id" />
    			<label for="basic">Password:</label>
     		<input type="password" name="name" id="password" value=""  placeholder="Enter your Password"/>
     		 <input value="Login" type="submit" id="submitPassword">
-    		
+    		 
+    		 <!-- Dialog -->
+			<div data-role="popup" id="errorPopup">
+				<p>Email ID/Password is wrong</p>
+			</div>
+			
 
 		</div>
 		
