@@ -6,7 +6,7 @@
 		<title>Car Pool</title>
 		
 		<link rel="shortcut icon" href="./images/images.ico" type="image/ico" />
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<link rel="stylesheet" type="text/css" href="libraries/smoothness/jquery-ui.css" />
 		<link rel="stylesheet" href="libraries/jquery.mobile-1.3.2.css" />
 		<link rel="stylesheet" href="css/home.css">
