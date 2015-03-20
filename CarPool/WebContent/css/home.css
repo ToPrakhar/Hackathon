@@ -24,3 +24,29 @@
 #left-panel ul {
 	margin: 0px;
 }
+
+.font-family-list{
+	font-weight: normal;
+	font-size: 14px;
+	height: 60px;
+}
+.list-block:nth-child(1){
+	width: 80%;
+}
+.list-block:nth-child(2){
+	width: 9%;
+}
+.list-block:nth-child(3){
+	width: 9%;
+}
+.charity{
+	background-image: url("../images/donate.gif");
+  	height: 60px;
+  	background-repeat: no-repeat;
+  	background-size:56%;
+}
+.list-block{
+	display: inline-block;
+}
+.driver-rating{
+}

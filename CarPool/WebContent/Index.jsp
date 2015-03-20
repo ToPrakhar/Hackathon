@@ -6,7 +6,9 @@
 		<title>Car Pool</title>
 		
 		<link rel="shortcut icon" href="./images/images.ico" type="image/ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
 		<link rel="stylesheet" type="text/css" href="libraries/smoothness/jquery-ui.css" />
 		<link rel="stylesheet" href="libraries/jquery.mobile-1.3.2.css" />
 		<link rel="stylesheet" href="css/home.css">
@@ -30,9 +32,29 @@
 	
 		<!-- content -->
 		<div data-role="content" class="ui-content" role="main">
-
+			
+			<ul data-role="listview" data-inset="true">
+			
+			<li class="font-family-list">
+					<div class="list-block">
+						<div><strong>prakhar_gupta06@infosys.com</strong></div>
+						<div><strong>Mobile Num:</strong> 678 697 8784</div>
+						<div><strong>Car details:</strong> White Camry MH14-1234</div>
+						<div><span><strong>Trip Cost:</strong> 5$</span>
+						<span><strong>Trip Time:</strong> 6:00-6:30</span></div>
+					</div>
+					<div class="list-block">
+						<div class="charity"></div>
+					</div>
+					<div class="list-block">
+						<div class="driver-rating">Driver Rating</div>
+					</div>
+			</li>
+			
+			</ul>
+			
 		</div>
-		
+
 		<!-- left panel -->	
 		<div data-role="panel" id="left-panel" data-theme="b">
 		
