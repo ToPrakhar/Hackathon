@@ -20,6 +20,10 @@
 .vehicle-color {
 	margin-top: -26px;
 }
-.label-margin{
+.form-child-1 .label-margin{
 	margin-bottom: -20px !important;
+}
+
+.form-child{
+	margin-top: 20px;
 }

@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-	var addvehicle = "<label for=\"select-custom-20\" class=\"bold\">Vehicle Registration No</label>"+ 
+	var addvehicle = "<div class=\"form-child\"><label for=\"select-custom-20\" class=\"bold\">Vehicle Registration No</label>"+ 
 	"<input type=\"text\" name=\"registration-number\" placeholder=\"Vehicle Registration Number\" class=\"registration-number\" />"+
 	"<label for=\"select-custom-20\" class=\"bold label-margin\">Vehicle Model</label>"+     
 	"<select name=\"vehile-model\" class=\"vehile-model\" id=\"select-custom-20\" data-native-menu=\"false\">"+
@@ -46,11 +46,10 @@ $( document ).ready(function() {
 	"</select>"+
 	"<div class=\"save-form\">"+
 		"<button type=\"submit\" data-theme=\"b\" name=\"sace\" value=\"submit-value\" class=\"save-form\">SAVE</button>"+
-	"</div>";
+	"</div></div>";
 	
 	$(".add-vehicle").on("click", function(){
-		var childbody = $(".parent-driver").children()
-		$(".parent-driver").append(addvehicle);	
+		$(".parent-driver").append(addvehicle).trigger('create');	
 	});
 	
 });
