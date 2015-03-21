@@ -13,3 +13,42 @@ $( document ).on( "pageinit", "#demo-page", function() {
     });
 });
 
+$( document ).ready(function() {
+
+$(".moredetails").on("click", function(){
+	$(this).parent().siblings(".moredetail-child").slideToggle("fast");	
+});
+
+});
+
+
+$(document).on("pageinit",function(){
+	  
+	var listvariable ="<div class=\"child \">"+
+	"<div class=\"child-99 text-align bold\">"+
+	"<div class=\"child-70\">Black Camry MH-14 5463</div>"+
+	"<div class=\"child-30\"> Trip Cost: 5$</div>"+
+	"<div class=\"child-70\">Time 6PM-7PM</div>"+
+	"<div class=\"child-30\"><a class=\"button\">Book</a></div>"+
+	"<div class=\"child-100 text-align\">"+
+	"<a class=\"button font-12 moredetails\">More Details</a></div>"+
+	"<div class=\"child-100 text-align moredetail-child bold\">"+
+	"<div class=\"line\"></div>"+
+	"<div class=\"child-50\">prakhar_gupta06@infosys.com</div>"+
+	"<div class=\"child-50\">Mobile Num: 678-697-8784</div>"+
+	"<div class=\"child-50 charity\"></div>"+
+	"<div class=\"child-50 rating\">7/7 Rating</div>"+
+	"<div class=\"child-100\">North Springs --> Sandy Springs --> Dunwoody  --> Buckhead</div></div></div></div>"
+					
+
+$(".parent-list").append(listvariable + listvariable + listvariable + listvariable);							
+					
+});
+
+							
+							
+							
+							
+							
+							
+							

@@ -33,25 +33,12 @@
 		<!-- content -->
 		<div data-role="content" class="ui-content" role="main">
 			
-			<ul data-role="listview" data-inset="true">
+			<div class="parent-list">
 			
-			<li class="font-family-list">
-					<div class="list-block">
-						<div><strong>prakhar_gupta06@infosys.com</strong></div>
-						<div><strong>Mobile Num:</strong> 678 697 8784</div>
-						<div><strong>Car details:</strong> White Camry MH14-1234</div>
-						<div><span><strong>Trip Cost:</strong> 5$</span>
-						<span><strong>Trip Time:</strong> 6:00-6:30</span></div>
-					</div>
-					<div class="list-block">
-						<div class="charity"></div>
-					</div>
-					<div class="list-block">
-						<div class="driver-rating">Driver Rating</div>
-					</div>
-			</li>
+			</div>
 			
-			</ul>
+			
+			
 			
 		</div>
 

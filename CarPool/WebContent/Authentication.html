@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Authentication Page</title>
+  
+ 		<link rel="shortcut icon" href="./images/images.ico" type="image/ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" type="text/css" href="libraries/smoothness/jquery-ui.css" />
+		<link rel="stylesheet" href="libraries/jquery.mobile-1.3.2.css" />
+		<link rel="stylesheet" href="css/home.css">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="libraries/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="libraries/jquery-ui.js"></script>
+		<script type="text/javascript" src="libraries/jquery.mobile-1.3.2.js"></script>
+		<script type="text/javascript" src="libraries/jquery.blockUI.js"></script>
+		<script type="text/javascript" src="js/home.js"></script>
+		
+		<script type="text/javascript">
+		
+		function showImage(){
+			if($(".emailpwd").val().length==6 && $(".phonepwd").val().length==4){
+				$(".ui-block-d").css('display','block');
+				$( ".message-log" ).replaceWith( '<div class="message-log">All Fields Complete, Please Verify</div>' );
+				$( ".message-log" ).fadeOut(4000);
+				}
+			 else if($( ".emailpwd" ).val().length == 6 && $(".phonepwd").val().length==0){
+				  $( ".message-log" ).replaceWith( '<div class="message-log">Now Please Fill Phone Password</div>' );
+				  $( ".message-log" ).fadeOut(4000);
+				  $(".phonepwd").focus();
+				}
+			  else if($( ".phonepwd" ).val().length == 4 && $( ".emailpwd" ).val().length == 0){
+				  $( ".message-log" ).replaceWith( '<div class="message-log">Now Please Fill Email Password</div>' );
+				  $( ".message-log" ).fadeOut(4000);
+				  $(".emailpwd").focus();
+			  }
+			else{
+				$(".ui-block-d").css('display','none');
+			}	
+		}
+		
+		</script>
+  
+</head>
+<body>
+<div data-role="page" data-theme="d" class="authentication-page">
+
+	<div class="ui-header ui-bar-b" data-theme="b" data-role="header">
+		<h1>Authentication</h1>
+	</div><!-- /header -->
+
+<div data-role="content">	
+<form class="ui-authenticate-form" action="javascript:alert( 'success!' );">
+<div class="message-log"></div>
+ <div class="ui-grid-a">
+  <div class="ui-block-a">
+   <input type="password" onkeyup="showImage()" maxlength="6" placeholder="Email Pwd" name="emailpwd" class="emailpwd"/>
+  </div>
+  <div class="ui-block-b">-</div>
+  <div class="ui-block-c">
+   <input type="password" onkeyup="showImage()" maxlength="4" placeholder="Phone Pwd" name="phonepwd" class="phonepwd"/>
+  </div>
+  <div class="ui-block-d">
+  <img src="./images/GreenTick.png"  alt="Password Complete" style="width:15px;height:15px">
+  </div>
+ </div>
+ <div class="submit-verify">
+ <button type="submit" style="align:center" data-theme="b" name="submit" value="submit-value" class="verifypwd" >Verify</button>
+ </div>
+</form>
+<div class="middle-body">
+<hr>
+<h5 style="color: grey; font-style: italic">*NOTE: Please enter PASSWORD received in your EMAIL and on your PHONE to authenticate</h5>
+<hr>
+</div>
+<div class="last-body">
+<hr>
+<h5 style="color: grey; font-style: italic">*NOTE: Please RESET the PASSWORD which will be used to login from the next time</h5>
+<hr>
+</div>
+<form class="ui-post-authenticate-form" action="#">
+	<input type="password" class="post-authentication1" placeholder="Enter your Password">
+	<input type="password" class="post-authentication2" placeholder="Confirm Password">
+    <button type="submit" style="align:center" data-theme="b" class="set-password">Set Password</button>
+</form>
+
+ </div><!-- /content -->
+ </div><!-- /page -->
+  
+<script>
+
+//to hide the note section of reset password
+$(document).on('pageinit', '.authentication-page', function () 
+	     {             
+	        var page = $('[data-role="page"]:last'); 
+	        page.find('.last-body').hide();               
+	     });
+
+$( "form:first" ).submit(function( event ) {
+	//authentication successful
+	//make ajax call if no hard coding
+  if ( $( ".emailpwd" ).val() === "123456" && $( ".phonepwd" ).val() === "1234") {
+   $( ".ui-authenticate-form" ).fadeOut("slow");
+   $(".middle-body").fadeOut("slow");
+   $( "form:hidden:last" ).fadeIn( 5000 );
+   $(".last-body").fadeIn( 5000 );
+   event.preventDefault();
+  }
+});
+</script>
+ 
+</body>
+</html>
