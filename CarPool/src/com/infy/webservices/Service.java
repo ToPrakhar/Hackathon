@@ -1,6 +1,28 @@
 package com.infy.webservices;
 
-@Path(/)
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.ext.ContextResolver;
+import javax.ws.rs.ext.Provider;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+
+import org.apache.log4j.Logger;
+
+import com.google.gson.Gson;
+import com.infy.database.Dbhelper;
+import com.infy.entity.User;
+import com.sun.jersey.api.json.JSONJAXBContext;
+
+@Path("/")
 public class Service {
 
 	@Provider
@@ -10,14 +32,7 @@ public class Service {
 		@SuppressWarnings("unused")
 		private JAXBContext context;
 		@SuppressWarnings("unchecked")
-		private Class[] types = { AdminRequest.class, AdminResponse.class,
-				AssetDetailsResponse.class, AvailableRequest.class,
-				AvailableResponse.class, AssetHistoryRequest.class,
-				AssetHistoryResponse.class, RegisteredAssetRequest.class,
-				RegisteredAssetResponse.class, TrackerRequest.class,
-				TrackerResponse.class, UnavailableRequest.class,
-				UnavailableResponse.class, UserListResponse.class,AssetListResponse.class,AssetDetailsRequest.class,
-				UpdateRowResponse.class};
+		private Class[] types = {User.class};
 
 		@SuppressWarnings("deprecation")
 		public JAXBContextResolver() throws Exception {
@@ -55,7 +70,7 @@ public class Service {
 		}
 	}
 
-	private final static Logger logger = Logger.getLogger(WebServices.class);
+	private final static Logger logger = Logger.getLogger(Service.class);
 
 	/**
 	 * Home Page of the Web Services
@@ -68,78 +83,34 @@ public class Service {
 		// of the application.
 		// TODO - Home
 
-		System.out.println("\nMobility Asset Tracker Home !");
-		logger.info("Mobility Asset Tracker !");
-		return " Welcome to the Mobility Asset Tracker Web Services - Ver 1 ! :)";
-	}
-
-	@GET
-	@Path("/getUsersList")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String getUsersList() {
-		// Fetches the List of Users and send it as a response.
-		// TODO - User List
-		try {
-			Dbhelper dbHelper = new Dbhelper();
-			List<UserListResponse> userList = null;
-			try {
-				userList = dbHelper.getUsersList();
-
-			} catch (Exception e) {
-
-				System.out.println("\nException in getting User List. - "
-						+ e.getMessage());
-				e.printStackTrace();
-				logger.info("Exception in getting User List. - "
-						+ e.getMessage());
-			}
-
-			Gson gson = new Gson();
-			String response =  gson.toJson(userList);
-			System.out.println("\nUserlist : " + response);
-			return response;
-		} catch (Exception e) {
-
-			System.out.println("Exception Thrown");
-			return null;
-		}
-
+		System.out.println("WebService Working");
+		logger.info("WebService Working");
+		return " Welcome to Carpool Middleware Web services - Ver 1 ";
 	}
 
 	@POST
-	@Path("/updateTracker")
+	@Path("/insertUser")
 	@Consumes(MediaType.WILDCARD)
 	@Produces(MediaType.APPLICATION_JSON)
-	public String getTrackerResponse(String request) throws Exception {
+	public String setUser(String request) throws Exception {
 		
-		// Fetches the returnCode and updates the device entry information
-		// in the Tracker table in the Database.
-		// TODO - Tracker
+		logger.info("Request:"+request);
+		System.out.println("Request:"+request);
+
 		try {
 			Gson gson = new Gson();
-			TrackerRequest trackerRequest = new TrackerRequest();
-			trackerRequest = gson.fromJson(request, TrackerRequest.class);
-			TrackerResponse trackerResponse = new TrackerResponse();
+			User user = new User();
+			user = gson.fromJson(request, User.class);
 
 			Dbhelper dbhelper = new Dbhelper();
-			String retCode = dbhelper.getTrackerResponse(trackerRequest);
+			String response = dbhelper.setUser(user);
+			return response;
 
-			if (retCode.equals("111")) {
-				trackerResponse
-						.setRetCode("Device Entry Completed Successfully!");
-			} else {
-				trackerResponse
-						.setRetCode("Device Entry UnSuccessful! Please Try Again.");
-				System.out.println("else");
-			}
+		} catch (Exception ex) {
 
-			return trackerResponse.getRetCode();
-		} catch (Exception e) {
-
-			System.out.println("Exception Thrown");
-			return null;
+			logger.info("setUser:Service.java have errors: " + ex.getMessage());
+			return "Failure";
 		}
 	}
-	
-	
+
 }

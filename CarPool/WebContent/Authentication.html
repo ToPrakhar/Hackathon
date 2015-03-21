@@ -78,7 +78,8 @@
 <h5 style="color: grey; font-style: italic">*NOTE: Please RESET the PASSWORD which will be used to login from the next time</h5>
 <hr>
 </div>
-<form class="ui-post-authenticate-form" action="#">
+<form class="ui-post-authenticate-form" onsubmit="insertUser();" method="post" action="Index.jsp">
+	<div class="message-log2"></div>
 	<input type="password" class="post-authentication1" placeholder="Enter your Password">
 	<input type="password" class="post-authentication2" placeholder="Confirm Password">
     <button type="submit" style="align:center" data-theme="b" class="set-password">Set Password</button>
@@ -107,6 +108,40 @@ $( "form:first" ).submit(function( event ) {
    event.preventDefault();
   }
 });
+
+$( ".set-password" ).click(function( event ) {
+	if($(".post-authentication1").val()!=$(".post-authentication2").val()){
+		$( ".message-log2" ).replaceWith( '<div class="message-log2">Both Passwords does not match </div>' );
+		$( ".message-log2" ).fadeOut(4000);
+		event.stopPropagation();
+		event.preventDefault();
+		}
+	});
+
+function insertUser(){
+	
+var inputData = '{"userName":"ashwani1","password":"'+$(".post-authentication1").val()+'"}';
+	
+$.ajax({
+    url : 'service/insertUser',
+    type : "POST",
+    accepts : "application/json",
+    data : inputData,
+    dataType : "json",
+    headers : {
+    Accept : "application/json"
+   },
+     error : function(data) {
+	     
+    },
+    contentType : "application/json; charset=utf-8",
+    
+    // Populate data in accordian
+    success : function(data) {
+        }
+});
+}
+
 </script>
  
 </body>
