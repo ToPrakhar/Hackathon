@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+/*$( document ).ready(function() {
 
 	$(".vehile-model").change(function() {
 		if ($(this).val() != "Make") {
@@ -11,3 +11,4 @@ $( document ).ready(function() {
 	});
 	
 });
+*/
