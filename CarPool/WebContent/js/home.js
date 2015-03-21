@@ -38,7 +38,7 @@ authenticated= getCookie("auth");
 // if user is already authenticated redirect to jsp page
 if(authenticated=='true')
 	{
-	window.location = 'Index.jsp';
+	window.location = 'Index.html';
 	}
 
 //hard coded user name and password
@@ -46,7 +46,7 @@ $( "#submitPassword" ).click(function() {
 	if($('#existing-email').val()=='rider@infosys.com'&& $('#password').val()=='12345')
 		{
 		setCookie('auth',true,5);
-		window.location = 'Index.jsp';
+		window.location = 'Index.html';
 		}
 	else
 		{

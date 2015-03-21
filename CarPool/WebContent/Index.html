@@ -419,5 +419,52 @@
 	<!-- /content -->
 	</div>
 	
+	
+	<div data-role="page" id="page-register" data-theme="d" style="min-height: 245px;">
+		
+		<!-- header -->
+		<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
+			<h1>Car Pool Home</h1>
+		</div>
+	
+		<!-- content -->
+		<div data-role="content" class="ui-content" role="main">
+		
+		<div class="form-border">
+			<!-------- New Customer ---------->
+			<h3>New Users</h3>
+			<label for="email">Infosys Email Id:</label>
+   			 <input type="text" name="name" id="email" value="" placeholder="Enter Infosys Email Id" />
+   			<label for="mobileNumber">Mobile Number</label>
+    		<input type="text" name="name" id="mobileNumber" value=""  placeholder="Enter your Mobile Number"/>
+    		 <input value="Register" type="submit" id="register">
+		</div>
+			<!-- <div class="form-divider-line"></div> -->
+			
+			<!-------- Returning Customer ---------->
+			<div class="form-border">
+				<h3>Returning User</h3>
+				<label for="email">Infosys Email Id:</label>
+	   			<input type="text" name="name" id="existing-email" value="" placeholder="Enter Infosys Email Id" />
+	   			<label for="basic">Password:</label>
+	    		<input type="password" name="name" id="password" value=""  placeholder="Enter your Password"/>
+	    		 <input value="Login" type="submit" id="submitPassword">
+    		 </div>
+    		 <!-- Dialog -->
+			<div data-role="popup" id="errorPopup">
+				<p>Email ID/Password is wrong</p>
+			</div>
+			
+			 <!-- Dialog -->
+			<div data-role="popup" id="successPopup">
+				<p>An Email and a text containing password has been sent. Please verify on the next screen.</p>
+			</div>
+			
+
+		</div>
+		
+	
+	</div>
+	
 </body>
 </html>
