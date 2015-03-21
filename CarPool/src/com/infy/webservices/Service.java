@@ -1,5 +1,6 @@
 package com.infy.webservices;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +20,9 @@ import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
 import com.infy.database.Dbhelper;
+import com.infy.entity.Add;
 import com.infy.entity.User;
+import com.infy.entity.VehicleDetails;
 import com.sun.jersey.api.json.JSONJAXBContext;
 
 @Path("/")
@@ -99,8 +102,7 @@ public class Service {
 
 		try {
 			Gson gson = new Gson();
-			User user = new User();
-			user = gson.fromJson(request, User.class);
+			User user = gson.fromJson(request, User.class);
 
 			Dbhelper dbhelper = new Dbhelper();
 			String response = dbhelper.setUser(user);
@@ -108,6 +110,58 @@ public class Service {
 
 		} catch (Exception ex) {
 
+			logger.info("setUser:Service.java have errors: " + ex.getMessage());
+			return "Failure";
+		}
+	}
+	
+	@POST
+	@Path("/insertVehicleDetails")
+	@Consumes(MediaType.WILDCARD)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String setVehicleDetails(String request) throws Exception {
+		
+		logger.info("Request:"+request);
+		System.out.println("Request:"+request);
+
+		try {
+			Gson gson = new Gson();
+		
+			VehicleDetails[] arrayVehicleDetails = gson.fromJson(request, VehicleDetails[].class);
+			
+			List<VehicleDetails> listVehicleDetails = Arrays.asList(arrayVehicleDetails);
+
+			Dbhelper dbhelper = new Dbhelper();
+			String response = dbhelper.setVehicleDetails(listVehicleDetails);
+			return response;
+
+		} catch (Exception ex) {
+
+			logger.info("setUser:Service.java have errors: " + ex.getMessage());
+			return "Failure";
+		}
+	}
+
+	@POST
+	@Path("/insertAdd")
+	@Consumes(MediaType.WILDCARD)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String setAdd(String request) throws Exception {
+		
+		logger.info("Request:"+request);
+		System.out.println("Request:"+request);
+
+		try {
+			Gson gson = new Gson();
+			
+			Add advertise = gson.fromJson(request, Add.class);
+			
+			Dbhelper dbhelper = new Dbhelper();
+			String response = dbhelper.setAdvertise(advertise);
+			return response;
+
+		} catch (Exception ex) {
+			System.out.println("setUser:Service.java have errors: " + ex.getMessage());
 			logger.info("setUser:Service.java have errors: " + ex.getMessage());
 			return "Failure";
 		}
