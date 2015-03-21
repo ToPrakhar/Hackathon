@@ -500,6 +500,9 @@ a {
 }
 
 @media screen and (max-width: 720px) {
+	.child-99 {
+		width: 96%;
+	}
 	.child-70 {
 		width: 75%;
 		display: inline-block;
@@ -513,8 +516,21 @@ a {
 	.moredetail-child .child-50, .moredetail-child .child-70, .moredetail-child .child-30 {
 		min-height: 20px;
 	}
+	#home-page .ui-input-text{
+	width: 78%;
+}
 
 
-
+.go-btn{
+  width: 60px;
+  background: red;
+  display: block;
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+  margin-left: 84%;
+  margin-top: -36px;
+  z-index: 10000;
+}
 
 }
