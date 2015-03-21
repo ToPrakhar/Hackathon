@@ -1,0 +1,25 @@
+.vehicle-heading {
+	color: grey;
+	font-style: italic;
+}
+
+.green-tick {
+	width: 15px;
+	height: 15px;
+}
+
+.save-form {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.ui-field-contain .ui-select {
+	width: 100%;
+}
+
+.vehicle-color {
+	margin-top: -26px;
+}
+.label-margin{
+	margin-bottom: -20px !important;
+}
