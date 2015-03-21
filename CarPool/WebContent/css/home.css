@@ -146,24 +146,351 @@
 .list-block{
 	display: inline-block;
 }
-.driver-rating{
-}
 
 .bold{
 	font-weight: bold !important;
 }
-
-.form-divider-line{
-  height: 25px;
-  width: 100%;
-  background: yellow;
-  border: 2px solid green;
-  margin-top: 35px;
-  margin-bottom: 20px;
+--------------------
+/* Swipe works with mouse as well but often causes text selection. */
+#home-page * {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 
-.form-border{
-  border: 3px solid green;
-  padding: 20px;
+/* Arrow only buttons in the header. */
+#home-page .ui-header .ui-btn {
+	background: none;
+	border: none;
+	top: 9px;
+}
+
+#home-page .ui-header .ui-btn-inner {
+	border: none;
+}
+
+.ui-panel-inner {
+	padding: 0px;
+}
+
+#left-panel ul {
+	margin: 0px;
+}
+
+
+.main-section {
+	padding-top: 30%
+}
+
+.ui-authenticate-form,.ui-post-authenticate-form {
+	border: 2px solid green;
+	padding: 20px 10px 20px 10px;
+}
+
+.ui-block-a {
+	width: 50% !important;
+	padding: 10px ! important;
+}
+
+.ui-block-b {
+	padding-top: 27px !important;
+	width: 2% !important;
+	font-weight: bold;
+	text-align: center;
+}
+
+.ui-block-c {
+	padding: 10px !important;
+	width: 40% !important;
+}
+
+.ui-block-d {
+	display: none;
+	width: 8% !important;
+	padding-top: 25px !important;
+	padding-left: 10px;
+}
+
+.submit-verify {
+	padding-left: 30%;
+	width: 40% !important;
+}
+
+.ui-post-authenticate-form {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+	color: grey;
+	font-style: italic;
+}
+
+.main-section {
+	padding-top: 30%
+}
+
+.ui-authenticate-form,.ui-post-authenticate-form {
+	border: 2px solid green;
+	padding: 20px 10px 20px 10px;
+}
+
+.ui-block-a {
+	width: 50% !important;
+	padding: 10px ! important;
+}
+
+.ui-block-b {
+	padding-top: 27px !important;
+	width: 2% !important;
+	font-weight: bold;
+	text-align: center;
+}
+
+.ui-block-c {
+	padding: 10px !important;
+	width: 40% !important;
+}
+
+.ui-block-d {
+	display: none;
+	width: 8% !important;
+	padding-top: 25px !important;
+	padding-left: 10px;
+}
+
+.submit-verify {
+	padding-left: 30%;
+	width: 40% !important;
+}
+
+.ui-post-authenticate-form {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+	color: grey;
+	font-style: italic;
+}
+
+.main-section {
+	padding-top: 30%
+}
+
+.ui-authenticate-form,.ui-post-authenticate-form {
+	border: 2px solid green;
+	padding: 20px 10px 20px 10px;
+}
+
+.ui-block-a {
+	width: 50% !important;
+	padding: 10px ! important;
+}
+
+.ui-block-b {
+	padding-top: 27px !important;
+	width: 2% !important;
+	font-weight: bold;
+	text-align: center;
+}
+
+.ui-block-c {
+	padding: 10px !important;
+	width: 40% !important;
+}
+
+.ui-block-d {
+	display: none;
+	width: 8% !important;
+	padding-top: 25px !important;
+	padding-left: 10px;
+}
+
+.submit-verify {
+	padding-left: 30%;
+	width: 40% !important;
+}
+
+.ui-post-authenticate-form {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+	color: grey;
+	font-style: italic;
+}
+
+.main-section {
+	padding-top: 30%
+}
+
+.ui-authenticate-form,.ui-post-authenticate-form {
+	border: 2px solid green;
+	padding: 20px 10px 20px 10px;
+}
+
+.ui-block-a {
+	width: 50% !important;
+	padding: 10px ! important;
+}
+
+.ui-block-b {
+	padding-top: 27px !important;
+	width: 2% !important;
+	font-weight: bold;
+	text-align: center;
+}
+
+.ui-block-c {
+	padding: 10px !important;
+	width: 40% !important;
+}
+
+.ui-block-d {
+	display: none;
+	width: 8% !important;
+	padding-top: 25px !important;
+	padding-left: 10px;
+}
+
+.submit-verify {
+	padding-left: 30%;
+	width: 40% !important;
+}
+
+.ui-post-authenticate-form {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+	color: grey;
+	font-style: italic;
+}
+.font-family-list {
+	font-weight: normal;
+	font-size: 14px;
+	height: 60px;
+}
+
+.list-block:nth-child(1) {
+	width: 80%;
+}
+
+.list-block:nth-child(2) {
+	width: 9%;
+}
+
+.list-block:nth-child(3) {
+	width: 9%;
+}
+
+.list-block {
+	display: inline-block;
+}
+
+.child-99 {
+	width: 99%;
+	border: 1px solid black;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.child-100 {
+	width: 100%;
+}
+
+.child-50, .child-70, .child-30 {
+	width: 48%;
+	display: inline-block;
+	line-height: 40 px;
+}
+
+a {
+	cursor: pointer;
+}
+
+.line {
+	height: 1px;
+	background: brown;
+	margin-left: -20px
+}
+
+.moredetail-child {
+	height: 108px;
+	display: none;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.moredetail-child .child-50, .moredetail-child .child-70, .moredetail-child .child-30 {
+	min-height: 20px;
+}
+
+.moredetail-child .line {
+	padding: 0px;
+}
+
+.font-12 {
+	font-size: 12px;
+}
+
+.text-align {
+	text-align: center;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.charity {
+	background-image: url("../images/donate.gif");
+	background-repeat: no-repeat;
+	height: 40px;
+	background-size: 7%;
+	background-position: 50%;
+}
+
+.ratings {
+	
+}
+
+.button {
+	width: 60px;
+	height: 30px;
+	color: blue;
+}
+
+.form-divider-line {
+	height: 25px;
+	width: 100%;
+	background: yellow;
+	border: 2px solid green;
+	margin-top: 35px;
+	margin-bottom: 20px;
+}
+
+.form-border {
+	border: 3px solid green;
+	padding: 20px;
+}
+
+@media screen and (max-width: 720px) {
+	.child-70 {
+		width: 75%;
+		display: inline-block;
+		line-height: 40px;
+	}
+	.child-30 {
+		width: -1%;
+		display: inline-block;
+		line-height: 40px;
+	}
+	.moredetail-child .child-50, .moredetail-child .child-70, .moredetail-child .child-30 {
+		min-height: 20px;
+	}
+
+
+
 
 }
