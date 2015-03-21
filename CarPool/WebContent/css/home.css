@@ -499,6 +499,10 @@ a {
 	width: 93%;
 }
 
+#home-page-register .ui-input-text{
+	width: 99%;
+}
+
 @media screen and (max-width: 720px) {
 	.child-99 {
 		width: 96%;
