@@ -475,6 +475,30 @@ a {
 	padding: 20px;
 }
 
+.search-box{
+	margin-top:10px;
+}
+
+.parent-list{
+	margin-top: 20px;
+}
+
+.go-btn{
+  width: 60px;
+  background: red;
+  display: block;
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+  margin-left: 95%;
+  margin-top: -36px;
+  z-index: 10000;
+}
+
+#home-page .ui-input-text{
+	width: 93%;
+}
+
 @media screen and (max-width: 720px) {
 	.child-70 {
 		width: 75%;
