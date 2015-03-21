@@ -32,7 +32,6 @@ $( document ).ready(function() {
 			}
 		else
 			{
-			console.log('mero');
 			$( "#errorPopup" ).popup("open");
 			}
 		});
@@ -55,4 +54,17 @@ $( document ).ready(function() {
 	    return "";
 	}
 	
+	
+	
+	$( "#register" ).click(function() {
+
+			var url="sendmail?email="+$('#email').val()+"&mobile="+$('#mobileNumber').val();
+			var jqxhr = $.get( url, function() {
+				$( "#successPopup" ).popup("open");
+				setTimeout(function(){ 
+					window.location = 'Authentication.html';
+					}, 3000);
+				});
+				
 	});
+});

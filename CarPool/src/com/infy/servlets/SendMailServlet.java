@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class SendMailServlet extends HttpServlet{
 	
+	private boolean isSendtingToEmail;
 	/**
 	 * 
 	 */
@@ -25,52 +26,70 @@ public class SendMailServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(req, resp);
 		
 		 String emailId = req.getParameter("email");
-		 
-		 // Recipient's email ID needs to be mentioned.
-	      String to = emailId;
+		 String mobile= req.getParameter("mobile");
+		 mobile="1"+mobile+"@tmomail.net";
+		 isSendtingToEmail=true;
+			sendEmail(emailId);
+		isSendtingToEmail=false;
+		sendEmail(mobile);
 
-	      // Sender's email ID needs to be mentioned
-	      String from = "web@gmail.com";
 
-	      // Assuming you are sending email from localhost
-	      String host = "localhost";
-
-	      // Get system properties
-	      Properties properties = System.getProperties();
-
-	      // Setup mail server
-	      properties.setProperty("mail.smtp.host", host);
-
-	      // Get the default Session object.
-	      Session session = Session.getDefaultInstance(properties);
-
-	      try{
-	         // Create a default MimeMessage object.
-	         MimeMessage message = new MimeMessage(session);
-
-	         // Set From: header field of the header.
-	         message.setFrom(new InternetAddress(from));
-
-	         // Set To: header field of the header.
-	         message.addRecipient(Message.RecipientType.TO,
-	                                  new InternetAddress(to));
-
-	         // Set Subject: header field
-	         message.setSubject("Car Pooling!");
-
-	         // Now set the actual message
-	         message.setText("Your password is : 123456");
-
-	         // Send message
-	         Transport.send(message);
-	         System.out.println("Sent message successfully....");
-	      }catch (MessagingException mex) {
-	         mex.printStackTrace();
-	      }
+	      
 		 
 	}
+	
+	public void sendEmail(String reciepient)
+	{
+		String[] to= new String[]{reciepient};
+		try{
+		String host = "smtp.gmail.com";
+	    String from = "carpoolinfy@gmail.com";
+	    String pass = "mar@2015";
+	    Properties props = System.getProperties();
+	    props.put("mail.smtp.starttls.enable", "true"); // added this line
+	    props.put("mail.smtp.host", host);
+	    props.put("mail.smtp.user", from);
+	    props.put("mail.smtp.password", pass);
+	    props.put("mail.smtp.port", "587");
+	    props.put("mail.smtp.auth", "true");
+	    Session session = Session.getDefaultInstance(props, null);
+	    MimeMessage message = new MimeMessage(session);
+	    message.setFrom(new InternetAddress(from));
+
+	    InternetAddress[] toAddress = new InternetAddress[to.length];
+
+	    // To get the array of addresses
+	    for( int i=0; i < to.length; i++ ) { // changed from a while loop
+	        toAddress[i] = new InternetAddress(to[i]);
+	    }
+	    System.out.println(Message.RecipientType.TO);
+
+	    for( int i=0; i < toAddress.length; i++) { // changed from a while loop
+	        message.addRecipient(Message.RecipientType.TO, toAddress[i]);
+	    }
+	   
+	    if(isSendtingToEmail)
+	    {
+	    message.setSubject("Infosys Email Car Pool Message");
+	    message.setText("Your Temporary password is 123456. Please use it along with the password sent on you registered mobile number to access the application");
+	    }
+	    else{
+	    	 message.setSubject("Infosys Mobile Car Pool Message");
+	    	message.setText("your one time password to login is 1234.This password will expire in 15 min");	
+	    }
+	    
+	    Transport transport = session.getTransport("smtp");
+	    transport.connect(host, from, pass);
+	    transport.sendMessage(message, message.getAllRecipients());
+	    transport.close();
+         System.out.println("Sent message successfully....");
+		
+		 }catch (MessagingException mex) {
+	         mex.printStackTrace();
+	      }
+		 }
+	
 
 }
