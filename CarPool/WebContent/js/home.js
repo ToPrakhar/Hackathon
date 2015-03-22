@@ -37,17 +37,14 @@ $(".logout").on("click", function(){
 authenticated= getCookie("auth");
 
 // if user is already authenticated redirect to jsp page
-if(authenticated=='true')
-	{
-	window.location = 'Index.html';
-	}
+
 
 //hard coded user name and password
 $( "#submitPassword" ).click(function() {
 	if($('#existing-email').val()=='rider@infosys.com'&& $('#password').val()=='12345')
 		{
 		setCookie('auth',true,5);
-		window.location = 'Index.html';
+		window.location = 'Index.html#home-page';
 		}
 	else
 		{
@@ -252,6 +249,9 @@ $( ".set-password" ).click(function( event ) {
 		event.stopPropagation();
 		event.preventDefault();
 		}
+	else{
+		window.location = 'Index.html#home-page';
+	}
 	});
 
 });

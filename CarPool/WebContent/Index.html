@@ -26,70 +26,9 @@
 
 <body>
 
-	<div data-role="page" id="home-page" data-theme="d" style="min-height: 245px;">
-		
-		<div class="loader"></div>
-		
-		<!-- header -->
-		<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
-			<a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
-			<h1>Car Pool Status</h1>
-			<a href="#home-page-register" data-icon="check">Logout</a>
-		</div>
 	
-		<!-- content -->
-		<div data-role="content" class="ui-content" role="main">
-		
-			<input type="text" name="name" id="basic" class="search-box" value="" data-mini="true" placeholder="Please search your source or designation"/>
-			<a class="go-btn">Go</a>
-			
-			<div data-role="navbar" id="home-page-tap">
-			<ul>
-				<li><a class="ui-btn-active ui-state-persist" id="paid-tap">Paid</a></li>
-				<li><a id="unpaid-tap">Unpaid</a></li>
-			</ul>
-			</div>
-			
-			<div class="parent-list">
-			
-			</div>
-			
-			
-			
-			
-		</div>
 
-		<!-- left panel -->	
-		<div data-role="panel" id="left-panel" data-theme="b">
-		
-			<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
-				<h1>User Role</h1>
-			</div>
-			
-			<ul data-role="listview">
-				<li><a href="#vehicle-details-page">Driver</a></li>
-				<li><a href="#">Help</a></li>
-				<li><a href="#">Profile</a></li>
-				<li><a href="#invite-friend-page">Invite a Friend</a></li>
-				<li><a href="#" class="logout">Logout</a></li>
-			</ul>
-		
-		</div>
 	
-	</div>
-
-	<div data-role="page" data-url="book-confirm.html" id="book-confirm">
-		<div data-role="header">
-			<h1>Please Confirm</h1>
-		</div>
-		<div data-role="content">
-			<p>Are You sure?</p>
-			
-			<a data-role="button" data-rel="back" data-theme="b">OK</a>
-		</div>
-
-		
-	</div>
 
 	<div data-role="page" id="home-page-register" data-theme="d" style="min-height: 245px;">
 		
@@ -146,6 +85,72 @@
 	
 	</div>
 	
+	
+	<div data-role="page" id="home-page" data-theme="d" style="min-height: 245px;">
+		
+		<div class="loader"></div>
+		
+		<!-- header -->
+		<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
+			<a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
+			<h1>Car Pool Status</h1>
+			<a href="#home-page-register" data-icon="check">Logout</a>
+		</div>
+	
+		<!-- content -->
+		<div data-role="content" class="ui-content" role="main">
+		
+			<input type="text" name="name" id="basic" class="search-box" value="" data-mini="true" placeholder="Please search your source or designation"/>
+			<a class="go-btn">Go</a>
+			
+			<div data-role="navbar" id="home-page-tap">
+			<ul>
+				<li><a class="ui-btn-active ui-state-persist" id="paid-tap">Paid</a></li>
+				<li><a id="unpaid-tap">Unpaid</a></li>
+			</ul>
+			</div>
+			
+			<div class="parent-list">
+			
+			</div>
+			
+			
+			
+			
+		</div>
+
+		<!-- left panel -->	
+		<div data-role="panel" id="left-panel" data-theme="b">
+		
+			<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
+				<h1>User Role</h1>
+			</div>
+			
+			<ul data-role="listview">
+				<li><a href="#vehicle-details-page">Driver</a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#invite-friend-page">Invite a Friend</a></li>
+				<li><a href="#" class="logout">Logout</a></li>
+			</ul>
+		
+		</div>
+	
+	</div>
+	
+	
+	<div data-role="page" data-url="book-confirm.html" id="book-confirm">
+		<div data-role="header">
+			<h1>Please Confirm</h1>
+		</div>
+		<div data-role="content">
+			<p>Are You sure?</p>
+			
+			<a data-role="button" data-rel="back" data-theme="b">OK</a>
+		</div>
+
+		
+	</div>
 	
 	<div data-role="page" data-theme="d" class="vehicle-details-page" id="vehicle-details-page">
 
@@ -286,7 +291,7 @@
 <h5 style="color: grey; font-style: italic">*NOTE: Please RESET the PASSWORD which will be used to login from the next time</h5>
 <hr>
 </div>
-<form class="ui-post-authenticate-form" onsubmit="insertUser();" method="post" action="Index.html#home-page">
+<form class="ui-post-authenticate-form" onsubmit="insertUser();" method="post" >
 	<div class="message-log2"></div>
 	<input type="password" class="post-authentication1" placeholder="Enter your Password">
 	<input type="password" class="post-authentication2" placeholder="Confirm Password">
