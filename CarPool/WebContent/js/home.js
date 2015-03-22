@@ -173,6 +173,27 @@ $("#unpaid-tap").on("click", function(){
 	setTimeout(function(){$("#loadingdemo").show(); }, 1000);
 });
 
+$( ".ui-authenticate-form" ).submit(function( event ) {
+	//authentication successful
+	//make ajax call if no hard coding
+  if ( $( ".emailpwd" ).val() === "123456" && $( ".phonepwd" ).val() === "1234") {
+   $( ".ui-authenticate-form" ).fadeOut("slow");
+   $(".middle-body").fadeOut("slow");
+   $( ".ui-post-authenticate-form" ).fadeIn( 5000 );
+   $("#last-body2").fadeIn( 5000 );
+   event.preventDefault();
+  }
+});
+
+$( ".set-password" ).click(function( event ) {
+	if($(".post-authentication1").val()!=$(".post-authentication2").val()){
+		$( ".message-log2" ).replaceWith( '<div class="message-log2">Both Passwords does not match </div>' );
+		$( ".message-log2" ).fadeOut(4000);
+		event.stopPropagation();
+		event.preventDefault();
+		}
+	});
+
 });
 
 
@@ -199,7 +220,38 @@ $(".parent-list").append(listvariable + listvariable + listvariable + listvariab
 					
 });
 
-							
+//to hide the note section of reset password
+$(document).on('pageinit',".authentication-page",function (){ 
+	   var page = $('.authentication-page'); 
+       page.find('#last-body2').hide();
+       page.find('.ui-post-authenticate-form').hide();
+	     });
+
+
+
+function insertUser(){
+	
+var inputData = '{"userName":"ashwani","password":"'+$(".post-authentication1").val()+'"}';
+	
+$.ajax({
+    url : 'service/insertUser',
+    type : "POST",
+    accepts : "application/json",
+    data : inputData,
+    dataType : "json",
+    headers : {
+    Accept : "application/json"
+   },
+     error : function(data) {
+	     
+    },
+    contentType : "application/json; charset=utf-8",
+    
+    // Populate data in accordian
+    success : function(data) {
+        }
+});
+}							
 							
 							
 							

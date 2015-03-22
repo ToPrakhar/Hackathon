@@ -138,29 +138,29 @@
 }
 
 
-/* .ui-block-a {
+#authentication-page .ui-block-a {
 	width: 50% !important;
 	padding: 10px ! important;
 }
 
-.ui-block-b {
+#authentication-page .ui-block-b {
 	padding-top: 27px !important;
 	width: 2% !important;
 	font-weight: bold;
 	text-align: center;
 }
 
-.ui-block-c {
+#authentication-page  .ui-block-c {
 	padding: 10px !important;
 	width: 40% !important;
 }
 
-.ui-block-d {
+#authentication-page  .ui-block-d {
 	display: none;
 	width: 8% !important;
 	padding-top: 25px !important;
  	padding-left: 10px;
-}*/	
+}
 
 .submit-verify {
 	padding-left: 30%;
