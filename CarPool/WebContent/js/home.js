@@ -46,8 +46,8 @@ $( "#submitPassword" ).click(function() {
 	if($('#existing-email').val()=='rider@infosys.com'&& $('#password').val()=='12345')
 		{
 		setCookie('auth',true,5);
-			window.location = 'Index.html';
-	}
+		window.location = 'Index.html';
+		}
 	else
 		{
 		$( "#errorPopup" ).popup("open");
