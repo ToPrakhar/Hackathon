@@ -30,8 +30,9 @@
 		
 		<!-- header -->
 		<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
-			<h1>Car Pool Status</h1>
 			<a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
+			<h1>Car Pool Status</h1>
+			<a href="#home-page-register" data-icon="check">Logout</a>
 		</div>
 	
 		<!-- content -->
@@ -55,8 +56,8 @@
 			</div>
 			
 			<ul data-role="listview">
-				<li><a href="#">Driver</a></li>
-				<li><a href="#">Rider</a></li>
+				<li><a href="#vehicle-details-page">Driver</a></li>
+				<li><a href="#home-page">Home</a></li>
 				<li><a href="#">Help</a></li>
 				<li><a href="#">Profile</a></li>
 				<li><a href="#" class="logout">Logout</a></li>
@@ -76,7 +77,15 @@
 		<!-- content -->
 		<div data-role="content" class="ui-content" role="main">
 		
-		<div class="form-border">
+		
+		<div data-role="navbar" id="home-page-tap">
+			<ul>
+				<li><a class="ui-btn-active ui-state-persist" id="new-user-tap">New User</a></li>
+				<li><a id="old-user-tap">Returning User</a></li>
+			</ul>
+		</div>
+		
+		<div class="form-border new-user">
 			<!-------- New Customer ---------->
 			<h3>New Users</h3>
 			<label for="email">Infosys Email Id:</label>
@@ -88,7 +97,7 @@
 			<!-- <div class="form-divider-line"></div> -->
 			
 			<!-------- Returning Customer ---------->
-			<div class="form-border">
+			<div class="form-border returning-user" style="display:none">
 				<h3>Returning User</h3>
 				<label for="email">Infosys Email Id:</label>
 	   			<input type="text" name="name" id="existing-email" value="" placeholder="Enter Infosys Email Id" />
@@ -112,10 +121,13 @@
 	
 	</div>
 	
+	
 	<div data-role="page" data-theme="d" class="vehicle-details-page" id="vehicle-details-page">
 
 		<div class="ui-header ui-bar-b" data-theme="b" data-role="header">
+		<a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
 			<h1>Vehicle Details</h1>
+			<a href="#home-page-register" data-icon="check" class="ui-btn-right">Logout</a>
 		</div>
 		<!-- /header -->
 
@@ -203,6 +215,7 @@
 
 	<div class="ui-header ui-bar-b" data-theme="b" data-role="header">
 		<h1>Authentication</h1>
+		<a href="#home-page-register" data-icon="check" class="ui-btn-right">Logout</a>
 	</div><!-- /header -->
 
 <div data-role="content">	
@@ -247,7 +260,9 @@
  <div data-role="page" data-theme="d" class="post-add-page" id="post-add-page">
 
 		<div class="ui-header ui-bar-b" data-theme="b" data-role="header">
+		<a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
 			<h1>Post An Add</h1>
+			<a href="#home-page-register" data-icon="check" class="ui-btn-right">Logout</a>
 		</div>
 		<!-- /header -->
 

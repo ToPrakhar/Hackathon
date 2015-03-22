@@ -38,7 +38,7 @@ authenticated= getCookie("auth");
 // if user is already authenticated redirect to jsp page
 if(authenticated=='true')
 	{
-	window.location = 'Index.jsp';
+	window.location = 'Index.html';
 	}
 
 //hard coded user name and password
@@ -46,8 +46,8 @@ $( "#submitPassword" ).click(function() {
 	if($('#existing-email').val()=='rider@infosys.com'&& $('#password').val()=='12345')
 		{
 		setCookie('auth',true,5);
-		window.location = 'Index.jsp';
-		}
+			window.location = 'Index.html';
+	}
 	else
 		{
 		$( "#errorPopup" ).popup("open");
@@ -137,6 +137,16 @@ var addvehicle = "<div class=\"form-child\"><label for=\"select-custom-20\" clas
 
 $(".add-vehicle").on("click", function(){
 	$(".parent-driver").append(addvehicle).trigger('create');	
+});
+
+$("#new-user-tap").on("click", function(){
+	$(".returning-user").hide();
+	$(".new-user").show();
+});
+
+$("#old-user-tap").on("click", function(){
+	$(".new-user").hide();
+	$(".returning-user").show();
 });
 
 });
