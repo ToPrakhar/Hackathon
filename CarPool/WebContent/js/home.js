@@ -166,7 +166,11 @@ $("#paid-tap").on("click", function(){
 });
 
 $("#unpaid-tap").on("click", function(){
-	$("#loadingdemo").show();
+	setTimeout(function(){$("#loadingdemo").show(); }, 1000);
+});
+
+$("#unpaid-tap").on("click", function(){
+	setTimeout(function(){$("#loadingdemo").show(); }, 1000);
 });
 
 });
