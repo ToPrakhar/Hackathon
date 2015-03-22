@@ -68,7 +68,6 @@
 			
 			<ul data-role="listview">
 				<li><a href="#vehicle-details-page">Driver</a></li>
-				<li><a href="#home-page">Home</a></li>
 				<li><a href="#">Help</a></li>
 				<li><a href="#">Profile</a></li>
 				<li><a href="#invite-friend-page">Invite a Friend</a></li>
@@ -78,7 +77,20 @@
 		</div>
 	
 	</div>
-	
+
+	<div data-role="page" data-url="book-confirm.html" id="book-confirm">
+		<div data-role="header">
+			<h1>Please Confirm</h1>
+		</div>
+		<div data-role="content">
+			<p>Are You sure?</p>
+			
+			<a href="docs-dialogs.html" data-role="button" data-rel="back" data-theme="b">OK</a>
+		</div>
+
+		
+	</div>
+
 	<div data-role="page" id="home-page-register" data-theme="d" style="min-height: 245px;">
 		
 		<!-- header -->
@@ -101,10 +113,10 @@
 			<!-------- New Customer ---------->
 			<h3>New Users</h3>
 			<label for="email">Infosys Email Id:</label>
-   			 <input type="text" name="name" id="email" value="" placeholder="Enter Infosys Email Id" />
+   			<input type="text" name="name" id="email" value="" placeholder="Enter Infosys Email Id" />
    			<label for="mobileNumber">Mobile Number</label>
     		<input type="text" name="name" id="mobileNumber" value=""  placeholder="Enter your Mobile Number"/>
-    		 <input value="Register" type="submit" id="register">
+    		<input value="Register" type="submit" id="register">
 		</div>
 			<!-- <div class="form-divider-line"></div> -->
 			
@@ -148,7 +160,8 @@
 			<div class="last-body">
 				<hr>
 				<h5 class="vehicle-heading">Please Fill in the following Information</h5>
-				<a class="add-vehicle">Add Second Vehicle</a>
+				<a class="add-vehicle">Add Other Vehicle</a>
+				<div class="add-image"></div>
 				<hr>
 			</div>
 
@@ -220,7 +233,21 @@
 			</form>
 
 		</div>
-		<!-- /content -->
+		<div data-role="panel" id="left-panel" data-theme="b">
+		
+			<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
+				<h1>User Role</h1>
+			</div>
+			
+			<ul data-role="listview">
+				<li><a href="#home-page">Home</a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#invite-friend-page">Invite a Friend</a></li>
+				<li><a href="#" class="logout">Logout</a></li>
+			</ul>
+		
+		</div>
 	</div>
 	
 	<div data-role="page" data-theme="d" class="authentication-page" id="authentication-page">
@@ -435,6 +462,22 @@
 
 
 	</div>
+	<div data-role="panel" id="left-panel" data-theme="b">
+		
+			<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
+				<h1>User Role</h1>
+			</div>
+			
+			<ul data-role="listview">
+				<li><a href="#vehicle-details-page">Driver</a></li>
+				<li><a href="#home-page">Home</a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#invite-friend-page">Invite a Friend</a></li>
+				<li><a href="#" class="logout">Logout</a></li>
+			</ul>
+		
+		</div>
 	<!-- /content -->
 	</div>
 	
@@ -491,6 +534,7 @@
 	<div data-role="page" class="invite-friend-page" id="invite-friend-page">
 
 	<div class="ui-header ui-bar-b" data-theme="b" data-role="header">
+	<a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
 		<h1>Invite your Friend</h1>
 	</div><!-- /header -->
 
@@ -504,10 +548,36 @@
 <input type="text" placeholder="Enter Email Id/Phone Number to Invite" name="invite" class="invite"/>
 <button type="submit" style="align:center" data-theme="b" name="submit" value="submit-value" class="invite-friend" >Invite Friend</button>
 </div>
-<div data-role="popup" id="successPopup">
+<div data-role="popup" id="successSendInvitePopup">
 				<p>Your Friend has been Invited!!</p>
 </div>
+
+<a href="#email-friend-popup" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="slidedown" style="display:none">data-transition="slidedown"</a>
+
+
 </div>
+</div>
+
+<div data-role="dialog" id="email-friend-popup">
+	<div data-role="header">Email Confirmation</div> 
+	<div data-role="content">Email has been sent to your friend for joining car pool app</div> 
+	<div data-role="footer">Thanks</div> 
+<div data-role="panel" id="left-panel" data-theme="b">
+		
+			<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
+				<h1>User Role</h1>
+			</div>
+			
+			<ul data-role="listview">
+				<li><a href="#vehicle-details-page">Driver</a></li>
+				<li><a href="#home-page">Home</a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#invite-friend-page">Invite a Friend</a></li>
+				<li><a href="#" class="logout">Logout</a></li>
+			</ul>
+		
+		</div>
 </div>
 
 <div id="loadingdemo" align="center"
