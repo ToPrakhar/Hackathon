@@ -85,7 +85,7 @@
 		<div data-role="content">
 			<p>Are You sure?</p>
 			
-			<a href="docs-dialogs.html" data-role="button" data-rel="back" data-theme="b">OK</a>
+			<a data-role="button" data-rel="back" data-theme="b">OK</a>
 		</div>
 
 		
@@ -100,6 +100,7 @@
 	
 		<!-- content -->
 		<div data-role="content" class="ui-content" role="main">
+		
 		
 		
 		<div data-role="navbar" id="home-page-tap">
@@ -514,7 +515,6 @@
     		 </div>
     		 <!-- Dialog -->
 			<div data-role="popup" id="errorPopup">
-				<p>Email ID/Password is wrong</p>
 			</div>
 			
 			 <!-- Dialog -->
@@ -526,6 +526,19 @@
 		</div>
 		
 	
+	</div>
+	
+	<div data-role="dialog" id="errorPopup">
+		<div data-role="header"><h1>Error</h1></div> 
+		<div data-role="content"><p>Email ID/Password is wrong</p><p>Thanks</p>
+		</div> 
+	</div>
+	
+	<div data-role="dialog" id="successPopup">
+		<div data-role="header"><h1>Success</h1></div> 
+		<div data-role="content"><p>Email ID/Password is wrong</p><p>Thanks</p>
+		<a data-role="button" data-rel="back" data-theme="b" class="successPopup-ok">OK</a>
+		</div> 
 	</div>
 
 
@@ -575,26 +588,13 @@
 </div>
 
 <div data-role="dialog" id="email-friend-popup">
-	<div data-role="header">Email Confirmation</div> 
-	<div data-role="content">Email has been sent to your friend for joining car pool app</div> 
-	<div data-role="footer">Thanks</div> 
-<div data-role="panel" id="left-panel" data-theme="b">
-		
-			<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
-				<h1>User Role</h1>
-			</div>
-			
-			<ul data-role="listview">
-				<li><a href="#vehicle-details-page">Driver</a></li>
-				<li><a href="#home-page">Home</a></li>
-				<li><a href="#">Help</a></li>
-				<li><a href="#">Profile</a></li>
-				<li><a href="#invite-friend-page">Invite a Friend</a></li>
-				<li><a href="#" class="logout">Logout</a></li>
-			</ul>
-		
-		</div>
+	<div data-role="header"><h1>Email Confirmation</h1></div> 
+	<div data-role="content"><p>Email has been sent to your friend for joining car pool app</p><p>Thanks</p>
+	<a data-role="button" data-rel="back" data-theme="b" class="email-friend-ok">OK</a>
+	</div> 
 </div>
+
+
 
 <div id="loadingdemo" align="center"
 		style="z-index: 10012; font-size: 24px; width: 100%; color: white; height: 100%; background-image: url('images/blank.gif'); top: 0; left: 0; position: fixed; vertical-align: middle; display: none; bottom: 0px;"

@@ -82,13 +82,17 @@ $( ".invite-friend" ).click(function() {
 	}
 	var jqxhr = $.get( url, function() {
 		$("#email-friend-popup").dialog();
-		$.mobile.changePage('#email-friend-popup', 'pop', true, true);
-		setTimeout(function(){ 
-			window.location = 'Index.html';
-			}, 2000);
+		$.mobile.changePage('#email-friend-popup', 'flip', true, true);
+		/*setTimeout(function(){ 
+			
+			}, 2000);*/
 		});
 });
 
+
+$(".email-friend-ok").on("click",function(){
+	window.location = 'Index.html';	
+});
 
 $( "#register" ).click(function() {
 
