@@ -133,10 +133,20 @@
 }
 
 .ui-authenticate-form,.ui-post-authenticate-form {
-	border: 2px solid green;
 	padding: 20px 10px 20px 10px;
 }
 
+.form-child-1{
+	
+}
+
+.ui-post-authenticate-form, .form-child-1, .form-child{
+	border: 2px solid green;
+}
+
+.form-child-1, .form-child{
+	padding: 20px;
+}
 
 #authentication-page .ui-block-a {
 	width: 50% !important;
@@ -266,6 +276,7 @@ a {
 	width: 60px;
 	height: 30px;
 	color: blue;
+	text-decoration: none;
 }
 
 .form-divider-line {

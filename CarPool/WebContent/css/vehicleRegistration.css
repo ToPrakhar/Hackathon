@@ -20,10 +20,33 @@
 .vehicle-color {
 	margin-top: -26px;
 }
-.form-child-1 .label-margin{
+
+.form-child-1 .label-margin {
 	margin-bottom: -20px !important;
 }
 
-.form-child{
+.form-child {
 	margin-top: 20px;
+}
+
+.add-image {
+	background-image: url('../images/sign1.png');
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	height: 44px;
+	margin: -20px 0 0 11%;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+
+	.add-image {
+	background-image: url('../images/sign1.png');
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	height: 44px;
+	margin: -20px 0 0 45%;
+	cursor: pointer;
+}
+
 }

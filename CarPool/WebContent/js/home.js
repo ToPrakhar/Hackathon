@@ -128,8 +128,8 @@ var addvehicle = "<div class=\"form-child\"><label for=\"select-custom-20\" clas
 "</select>"+
 "<label for=\"select-custom-21\" class=\"bold label-margin\">Vehicle Color</label>"+
 "<select name=\"select-custom-21\" class=\"vehicle-color\" id=\"select-custom-21\" data-native-menu=\"false\" disable>"+
-"<option value=\"Color\">Color</option>           "+
-"<option value=\"Red\">Red</option>         "+
+"<option value=\"Color\">Color</option>"+
+"<option value=\"Red\">Red</option>"+
 "<option value=\"Black\">Black</option>"+
 "<option value=\"Blue\">Blue</option>"+
 "<option value=\"Grey\">Grey</option>"+
@@ -143,13 +143,13 @@ var addvehicle = "<div class=\"form-child\"><label for=\"select-custom-20\" clas
 "<option value=\"light blue\">Light Blue</option>"+
 "<option value=\"Golden\">Golden</option>"+
 "<option value=\"Meheroon\">Meheroon</option>"+
-"<option value=\"Others\">Others</option>     "+
+"<option value=\"Others\">Others</option>"+
 "</select>"+
 "<div class=\"save-form\">"+
 	"<button type=\"submit\" data-theme=\"b\" name=\"sace\" value=\"submit-value\" class=\"save-form\">SAVE</button>"+
 "</div></div>";
 
-$(".add-vehicle").on("click", function(){
+$(".add-vehicle, .add-image").on("click", function(){
 	$(".parent-driver").append(addvehicle).trigger('create');	
 });
 
@@ -164,13 +164,68 @@ $("#old-user-tap").on("click", function(){
 });
 
 $("#paid-tap").on("click", function(){
+	var listvariable ="<div class=\"child \">"+
+	"<div class=\"child-99 text-align bold\">"+
+	"<div class=\"child-70\">Black Camry MH-14 5463</div>"+
+	"<div class=\"child-30\"> Trip Cost: 5$</div>"+
+	"<div class=\"child-70\">Time 6PM-7PM</div>"+
+	"<div class=\"child-30\"><a href=\"#book-confirm\" class=\"button\" data-rel=\"dialog\" data-transition=\"flip\">Book</a></div>"+
+	"<div class=\"child-100 text-align\">"+
+	"<a class=\"button font-12 moredetails\">More Details</a></div>"+
+	"<div class=\"child-100 text-align moredetail-child bold\">"+
+	"<div class=\"line\"></div>"+
+	"<div class=\"child-50\">prakhar_gupta06@infosys.com</div>"+
+	"<div class=\"child-50\">Mobile Num: 678-697-8784</div>"+
+	"<div class=\"child-50 charity\"></div>"+
+	"<div class=\"child-50 rating\">7/7 Rating</div>"+
+	"<div class=\"child-100\">North Springs --> Sandy Springs --> Dunwoody  --> Buckhead</div></div></div></div>";
 	$("#loadingdemo").show();
 	setTimeout(function(){$("#loadingdemo").hide(); }, 1000);
+	$(".parent-list").empty().append(listvariable + listvariable + listvariable + listvariable);
+});
+
+$(".go-btn").on("click",function(){
+	var listvariable ="<div class=\"child \">"+
+	"<div class=\"child-99 text-align bold\">"+
+	"<div class=\"child-70\">Black Camry MH-14 5463</div>"+
+	"<div class=\"child-30\"> Trip Cost: 5$</div>"+
+	"<div class=\"child-70\">Time 6PM-7PM</div>"+
+	"<div class=\"child-30\"><a href=\"#book-confirm\" class=\"button\" data-rel=\"dialog\" data-transition=\"flip\">Book</a></div>"+
+	"<div class=\"child-100 text-align\">"+
+	"<a class=\"button font-12 moredetails\">More Details</a></div>"+
+	"<div class=\"child-100 text-align moredetail-child bold\">"+
+	"<div class=\"line\"></div>"+
+	"<div class=\"child-50\">prakhar_gupta06@infosys.com</div>"+
+	"<div class=\"child-50\">Mobile Num: 678-697-8784</div>"+
+	"<div class=\"child-50 charity\"></div>"+
+	"<div class=\"child-50 rating\">7/7 Rating</div>"+
+	"<div class=\"child-100\">North Springs --> Sandy Springs --> Dunwoody  --> Buckhead</div></div></div></div>";
+	$("#loadingdemo").show();
+	setTimeout(function(){$("#loadingdemo").hide(); }, 1000);
+	
+	$(".parent-list").empty().append(listvariable);
+	
 });
 
 $("#unpaid-tap").on("click", function(){
+	var listvariable ="<div class=\"child \">"+
+	"<div class=\"child-99 text-align bold\">"+
+	"<div class=\"child-70\">White Audi MH-14 3433</div>"+
+	"<div class=\"child-30\"> Trip Cost: 7$</div>"+
+	"<div class=\"child-70\">Time 2PM-9PM</div>"+
+	"<div class=\"child-30\"><a href=\"#book-confirm\" class=\"button\" data-rel=\"dialog\" data-transition=\"flip\">Book</a></div>"+
+	"<div class=\"child-100 text-align\">"+
+	"<a class=\"button font-12 moredetails\">More Details</a></div>"+
+	"<div class=\"child-100 text-align moredetail-child bold\">"+
+	"<div class=\"line\"></div>"+
+	"<div class=\"child-50\">nishant@infosys.com</div>"+
+	"<div class=\"child-50\">Mobile Num: 678-697-8784</div>"+
+	"<div class=\"child-50 charity\"></div>"+
+	"<div class=\"child-50 rating\">7/7 Rating</div>"+
+	"<div class=\"child-100\">North Springs --> Sandy Springs --> Dunwoody  --> Buckhead</div></div></div></div>";
 	$("#loadingdemo").show();
 	setTimeout(function(){$("#loadingdemo").hide(); }, 1000);
+	$(".parent-list").empty().append(listvariable + listvariable + listvariable + listvariable);							
 });
 
 $( ".ui-authenticate-form" ).submit(function( event ) {
@@ -204,7 +259,7 @@ $(document).on("pageinit",function(){
 	"<div class=\"child-70\">Black Camry MH-14 5463</div>"+
 	"<div class=\"child-30\"> Trip Cost: 5$</div>"+
 	"<div class=\"child-70\">Time 6PM-7PM</div>"+
-	"<div class=\"child-30\"><a class=\"button\">Book</a></div>"+
+	"<div class=\"child-30\"><a href=\"#book-confirm\" class=\"button\" data-rel=\"dialog\" data-transition=\"flip\">Book</a></div>"+
 	"<div class=\"child-100 text-align\">"+
 	"<a class=\"button font-12 moredetails\">More Details</a></div>"+
 	"<div class=\"child-100 text-align moredetail-child bold\">"+
@@ -213,7 +268,7 @@ $(document).on("pageinit",function(){
 	"<div class=\"child-50\">Mobile Num: 678-697-8784</div>"+
 	"<div class=\"child-50 charity\"></div>"+
 	"<div class=\"child-50 rating\">7/7 Rating</div>"+
-	"<div class=\"child-100\">North Springs --> Sandy Springs --> Dunwoody  --> Buckhead</div></div></div></div>"
+	"<div class=\"child-100\">North Springs --> Sandy Springs --> Dunwoody  --> Buckhead</div></div></div></div>";
 					
 
 $(".parent-list").append(listvariable + listvariable + listvariable + listvariable);							
