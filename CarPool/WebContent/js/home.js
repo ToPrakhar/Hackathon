@@ -97,7 +97,6 @@ $( "#register" ).click(function() {
 				window.location = 'Authentication.html';
 				}, 2000);
 			});
-			
 });
 
 var addvehicle = "<div class=\"form-child\"><label for=\"select-custom-20\" class=\"bold\">Vehicle Registration No</label>"+ 
@@ -167,14 +166,7 @@ $("#paid-tap").on("click", function(){
 });
 
 $("#unpaid-tap").on("click", function(){
-
-	$.mobile.loading( "show", {
-		  text: "foo",
-		  textVisible: false,
-		  theme: "z",
-		  html: ""
-		});
-
+	$("#loadingdemo").show();
 });
 
 });

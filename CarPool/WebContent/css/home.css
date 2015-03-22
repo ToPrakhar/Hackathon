@@ -317,6 +317,52 @@ a {
 	margin-top: 20px;
 }
 
+
+#loadingText{
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	left: 40%;
+	top: 40%;
+	position: fixed;
+}	
+/*Loading Glass*/
+#loadingImage{
+	top: 45%;
+	left: 45%;
+	position: fixed;}
+.loadingClass{
+	left: 20%;
+	position: fixed;
+	top: 36%;
+	/* fallback */
+	background-color: #063053;
+	/* chrome 2+, safari 4+; multiple color stops */
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.32, #063053
+		), color-stop(0.66, #395873), color-stop(0.83, #5c7c99) );
+	/* chrome 10+, safari 5.1+ */
+	background-image: -webkit-linear-gradient(#063053, #395873, #5c7c99);
+	/* firefox; multiple color stops */
+	background-image: -moz-linear-gradient(top, #063053, #395873, #5c7c99);
+	/* ie 6+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#063053',
+		endColorstr='#395873' );
+	/* ie8 + */
+	-ms-filter:
+		"progid:DXImageTransform.Microsoft.gradient(startColorstr='#063053', endColorstr='#395873')";
+	/* ie10 */
+	background-image: -ms-linear-gradient(#063053, #395873, #5c7c99);
+	/* opera 11.1 */
+	background-image: -o-linear-gradient(#063053, #395873, #5c7c99);
+	/* The "standard" */
+	background-image: linear-gradient(#063053, #395873, #5c7c99);
+	border: 2pt solid white;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: -5px 15px 15px -5px #888888;
+}
+
 @media screen and (max-width: 720px) {
 	.child-99 {
 		width: 96%;
