@@ -292,14 +292,16 @@ a {
 
 .go-btn{
   width: 60px;
-  background: red;
+  background: linear-gradient( #6facd5, #497bae);
   display: block;
   height: 31px;
   line-height: 31px;
   text-align: center;
+  color: #ffffff !important;
   margin-left: 95%;
   margin-top: -36px;
   z-index: 10000;
+  border-radius: 8px;
 }
 
 #home-page .ui-input-text{
@@ -312,6 +314,7 @@ a {
 
 #home-page-tap{
 	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 @media screen and (max-width: 720px) {

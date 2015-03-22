@@ -28,6 +28,8 @@
 
 	<div data-role="page" id="home-page" data-theme="d" style="min-height: 245px;">
 		
+		<div class="loader"></div>
+		
 		<!-- header -->
 		<div data-role="header" data-theme="b" class="ui-header ui-bar-b" role="banner">
 			<a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
@@ -37,8 +39,17 @@
 	
 		<!-- content -->
 		<div data-role="content" class="ui-content" role="main">
+		
 			<input type="text" name="name" id="basic" class="search-box" value="" data-mini="true" placeholder="Please search your source or designation"/>
 			<a class="go-btn">Go</a>
+			
+			<div data-role="navbar" id="home-page-tap">
+			<ul>
+				<li><a class="ui-btn-active ui-state-persist" id="paid-tap">Paid</a></li>
+				<li><a id="unpaid-tap">Unpaid</a></li>
+			</ul>
+			</div>
+			
 			<div class="parent-list">
 			
 			</div>
@@ -60,6 +71,7 @@
 				<li><a href="#home-page">Home</a></li>
 				<li><a href="#">Help</a></li>
 				<li><a href="#">Profile</a></li>
+				<li><a href="#invite-friend-page">Invite a Friend</a></li>
 				<li><a href="#" class="logout">Logout</a></li>
 			</ul>
 		
@@ -144,7 +156,7 @@
 
 	<div class="parent-driver">
 			<div class="form-child-1">
-				<label for="select-custom-20" class="bold">Vehicle Registration No</label> 
+				<label for="select-custom-20" class="bold">Registration Number</label> 
 				<input type="text" name="registration-number" placeholder="Vehicle Registration Number" class="registration-number" />     
 
 
@@ -215,7 +227,6 @@
 
 	<div class="ui-header ui-bar-b" data-theme="b" data-role="header">
 		<h1>Authentication</h1>
-		<a href="#home-page-register" data-icon="check" class="ui-btn-right">Logout</a>
 	</div><!-- /header -->
 
 <div data-role="content">	
@@ -473,6 +484,31 @@
 		
 	
 	</div>
+
+
+<!-- invite a friend page -->
+	
+	<div data-role="page" class="invite-friend-page" id="invite-friend-page">
+
+	<div class="ui-header ui-bar-b" data-theme="b" data-role="header">
+		<h1>Invite your Friend</h1>
+	</div><!-- /header -->
+
+<div data-role="content">	
+<div class="middle-body">
+<hr>
+<h5 style="color: grey; font-style: italic">Invite your friend using their Email Id/Mobile Number</h5>
+<hr>
+</div>
+<div class="ui-authenticate-form" >
+<input type="text" placeholder="Enter Email Id/Phone Number to Invite" name="invite" class="invite"/>
+<button type="submit" style="align:center" data-theme="b" name="submit" value="submit-value" class="invite-friend" >Invite Friend</button>
+</div>
+<div data-role="popup" id="successPopup">
+				<p>Your Friend has been Invited!!</p>
+</div>
+</div>
+</div>
 	
 </body>
 </html>

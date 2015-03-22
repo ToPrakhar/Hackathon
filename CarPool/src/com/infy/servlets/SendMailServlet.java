@@ -30,14 +30,14 @@ public class SendMailServlet extends HttpServlet{
 		 String emailId = req.getParameter("email");
 		 String mobile= req.getParameter("mobile");
 		 mobile="1"+mobile+"@tmomail.net";
-		 isSendtingToEmail=true;
-			sendEmail(emailId);
+		 if(!emailId.isEmpty() && emailId!=null){
+			 isSendtingToEmail=true;
+				sendEmail(emailId);
+		 }
+		 if(!mobile.isEmpty() && mobile!=null){
 		isSendtingToEmail=false;
 		sendEmail(mobile);
-
-
-	      
-		 
+		 }
 	}
 	
 	public void sendEmail(String reciepient)

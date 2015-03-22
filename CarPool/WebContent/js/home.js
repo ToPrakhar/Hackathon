@@ -29,7 +29,7 @@ $(".logout").on("click", function(){
 	    	document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
 	    }
 	    
-	    location.href = "register.html";
+	    location.href = "#home-page-register";
 });
 
 
@@ -72,6 +72,20 @@ function getCookie(cname) {
     return "";
 }
 
+$( ".invite-friend" ).click(function() {
+	if($.isNumeric($('.invite').val())){
+		var url="sendmail?email=null"+"&mobile="+$('#mobileNumber').val();
+	}
+	else{
+		var url="sendmail?email="+$('#email').val()+"&mobile=null";
+	}
+	var jqxhr = $.get( url, function() {
+		$( "#successPopup" ).popup("open");
+		setTimeout(function(){ 
+			window.location = 'Index.html';
+			}, 2000);
+		});
+});
 
 
 $( "#register" ).click(function() {
@@ -81,7 +95,7 @@ $( "#register" ).click(function() {
 			$( "#successPopup" ).popup("open");
 			setTimeout(function(){ 
 				window.location = 'Authentication.html';
-				}, 3000);
+				}, 2000);
 			});
 			
 });
@@ -147,6 +161,20 @@ $("#new-user-tap").on("click", function(){
 $("#old-user-tap").on("click", function(){
 	$(".new-user").hide();
 	$(".returning-user").show();
+});
+
+$("#paid-tap").on("click", function(){
+});
+
+$("#unpaid-tap").on("click", function(){
+
+	$.mobile.loading( "show", {
+		  text: "foo",
+		  textVisible: false,
+		  theme: "z",
+		  html: ""
+		});
+
 });
 
 });
