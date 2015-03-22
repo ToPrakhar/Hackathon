@@ -163,13 +163,12 @@ $("#old-user-tap").on("click", function(){
 });
 
 $("#paid-tap").on("click", function(){
+	$("#loadingdemo").show();
+	setTimeout(function(){$("#loadingdemo").hide(); }, 1000);
 });
 
 $("#unpaid-tap").on("click", function(){
-	setTimeout(function(){$("#loadingdemo").show(); }, 1000);
-});
-
-$("#unpaid-tap").on("click", function(){
+	$("#loadingdemo").show();
 	setTimeout(function(){$("#loadingdemo").show(); }, 1000);
 });
 
