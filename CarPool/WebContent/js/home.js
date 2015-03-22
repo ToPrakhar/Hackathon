@@ -75,10 +75,10 @@ function getCookie(cname) {
 
 $( ".invite-friend" ).click(function() {
 	if($.isNumeric($('.invite').val())){
-		var url="sendmail?email=null"+"&mobile="+$('.invite').val();
+		var url="sendmail?email=null"+"&mobile="+$('.invite').val()+"&flag=true";
 	}
 	else{
-		var url="sendmail?email="+$('.invite').val()+"&mobile=null";
+		var url="sendmail?email="+$('.invite').val()+"&mobile=null&flag=true";
 	}
 	var jqxhr = $.get( url, function() {
 		$("#email-friend-popup").dialog();
@@ -92,11 +92,11 @@ $( ".invite-friend" ).click(function() {
 
 $( "#register" ).click(function() {
 
-		var url="sendmail?email="+$('#email').val()+"&mobile="+$('#mobileNumber').val();
+		var url="sendmail?email="+$('#email').val()+"&mobile="+$('#mobileNumber').val()+"&flag=false";
 		var jqxhr = $.get( url, function() {
 			$( "#successPopup" ).popup("open");
 			setTimeout(function(){ 
-				window.location = 'Authentication.html';
+				window.location = 'Index.html#authentication-page';
 				}, 2000);
 			});
 });

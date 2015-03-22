@@ -29,18 +29,19 @@ public class SendMailServlet extends HttpServlet{
 		
 		 String emailId = req.getParameter("email");
 		 String mobile= req.getParameter("mobile");
+		 String flag = req.getParameter("flag");
 		 mobile="1"+mobile+"@tmomail.net";
 		 if(!emailId.isEmpty() && emailId!=null){
 			 isSendtingToEmail=true;
-				sendEmail(emailId);
+				sendEmail(emailId,flag);
 		 }
 		 if(!mobile.isEmpty() && mobile!=null){
 		isSendtingToEmail=false;
-		sendEmail(mobile);
+		sendEmail(mobile,flag);
 		 }
 	}
 	
-	public void sendEmail(String reciepient)
+	public void sendEmail(String reciepient,String flag)
 	{
 		String[] to= new String[]{reciepient};
 		try{
@@ -72,12 +73,23 @@ public class SendMailServlet extends HttpServlet{
 	   
 	    if(isSendtingToEmail)
 	    {
-	    message.setSubject("Infosys Email Car Pool Message");
-	    message.setText("Your Temporary password is 123456. Please use it along with the password sent on you registered mobile number to access the application");
-	    }
+	    	if(flag.equalsIgnoreCase("false")){
+	    		 message.setSubject("Infosys Email Car Pool Message");
+	    		 message.setText("Your Temporary password is 123456. Please use it along with the password sent on you registered mobile number to access the application");
+	    	}else{
+	    		message.setSubject("Request from your friend");
+	    		message.setText("Hey Join the amazing new Carpool Application by hitting the link --> http://localhost:8080/newcarpool/Index.html#home-page-register. This application is free.");
+	    	}
+	   }
 	    else{
+	    	if(flag.equalsIgnoreCase("false")){
 	    	 message.setSubject("Infosys Mobile Car Pool Message");
 	    	message.setText("your one time password to login is 1234.This password will expire in 15 min");	
+	    	}else{
+	    		message.setSubject("Request from your friend");
+	    		message.setText("Hey Join the amazing new Carpool Application by hitting the link --> http://localhost:8080/newcarpool/Index.html#home-page-register. This application is free.");
+	    	}
+	    	
 	    }
 	    
 	    Transport transport = session.getTransport("smtp");
