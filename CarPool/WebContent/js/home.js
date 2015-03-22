@@ -14,6 +14,7 @@ $( document ).on( "pageinit", "#home-page", function() {
 });
 
 $( document ).ready(function() {
+$.mobile.defaultPageTransition = 'pop';
 
 $(".moredetails").on("click", function(){
 	$(this).parent().siblings(".moredetail-child").slideToggle("fast");	
@@ -252,7 +253,9 @@ $.ajax({
 });
 }							
 							
-							
+$(document).bind("mobileinit", function(){
+	  $.mobile.defaultPageTransition = 'pop';
+	});
 							
 							
 							
